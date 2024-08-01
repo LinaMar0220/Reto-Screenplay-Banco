@@ -1,26 +1,19 @@
 package co.inglina.interactions;
 
-import co.inglina.userinterfaces.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.actions.Open;
-import org.fluentlenium.core.annotation.Page;
 
+import static net.serenitybdd.core.Serenity.getDriver;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Abrir implements Interaction {
-    @Page
-    HomePage homePage;
-
+public class Maximizar implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Open.browserOn().the(homePage)
-        );
+        getDriver().manage().window().maximize();
     }
 
     public static Performable elNavegador() {
-        return instrumented(Abrir.class);
+        return instrumented(Maximizar.class);
     }
 }
