@@ -16,7 +16,6 @@ public class DepositarPage {
             .located(By.xpath("//button[@ng-click='transactions()']"));
     public static final Target MENSAJE_DEPOSITO_EXITOSO = the("Mensaje de confirmacion del deposito exitoso")
             .located(By.xpath("//span[text()='Deposit Successful']"));
-
     public static final Target TABLA_DEPOSITOS = the("Tabla de depositos realizados")
             .locatedBy("//table//td[contains(., '{0}')]");
 
